@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+ <!-- <record id="report_book_rent" model="ir.actions.report">
+        <field name="name">Book Rents</field>
+        <field name="model">res.partner</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">my_library.book_rents_
+        template</field>
+        <field name="report_file">my_library.book_rents_
+        template</field>
+        <field name="binding_model_id" ref="model_res_
+        partner"/>
+        <field name="binding_type">report</field>
+        </record> -->
+    
+    
+    
+    <record id="report_print_quotation_digital" model="ir.actions.report" >
+     <!--    <field name="inherit_id" ref="sale.view_order_form"/> -->
+        <field name="name">Print Quotation Digital</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">sale.report_saleorder_document</field>
+     <!--    <field name="report_file">sale.report_saleorder_document</field>
+       <field name="report_name">"'Quotation - %s' % (object.name).replace('/', '')"</field>
+         string="Print Quotation Digital"
+        
+      
+        name="sale.report_saleorder_document"
+        file="sale.report_saleorder_document"
+        print_report_name="'Quotation - %s' % (object.name).replace('/', '')" -->
+    </record>
+
+</odoo>

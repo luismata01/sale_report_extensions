@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="external_layout_standard_custom" inherit_id="web.external_layout_boxed">
+        <xpath expr="//div[1]" position="replace">
+            
+        </xpath>
+
+        <xpath expr="//div/div[hasclass('text-center')]" position="replace">
+             
+        </xpath>
+
+    </template>
+
+
+
+
+
+</odoo>

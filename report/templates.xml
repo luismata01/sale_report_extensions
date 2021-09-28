@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Inherit quotation report (from module sale) -->
+    <template 
+        id="report_quotation_inherit" 
+        inherit_id="sale.report_saleorder_document">
+        <!-- Finds the first table with as class table table-condensed and gives the ability to modify it
+        This will replace everything withing tr (including tr)-->
+        <!--<xpath expr="//table[@class='table table-condensed']/thead/tr" position="replace">-->
+       <!-- <t t-call="sale.report_saleorder_document" t-lang="user.lang" />  -->
+
+        <xpath expr="//table[@class='table table-sm o_main_table']/thead/tr" position="replace">
+            <tr style="background-color:lightgray;">
+            <!--    <th>Description</th>
+                <th class="text-right">Price</th> -->
+                <th name="th_brand" class="text-left">Marca</th>
+                <th name="th_description" class="text-left">Description</th>
+                <th name="th_quantity" class="text-right">Quantity</th>
+                <th name="th_priceunit" class="text-right">Unit Price</th>
+                <th name="th_discount" t-if="display_discount" class="text-right" groups="product.group_discount_per_so_line">
+                    <span>Disc.%</span>
+                </th>
+        <!--        <th name="th_taxes" class="text-right">Taxes</th>  -->
+                <th name="th_subtotal" class="text-right">
+                    <span groups="account.group_show_line_subtotals_tax_excluded">Amount</span>
+                    <span groups="account.group_show_line_subtotals_tax_included">Total Price</span>
+                </th>
+            </tr> 
+        </xpath> 
+
+        <xpath expr="//tbody[@class='sale_tbody']//tr//td[5]" position="replace">
+       
+        </xpath> 
+        <xpath expr="//tbody[@class='sale_tbody']//tr//td[1]" position="before"> 
+            <!-- <td name="td_brand_id"><span t-field="sale.order.line._brand_id"/></td>
+            <field name="_brand_id"/> -->
+            <td> 
+                <span t-field="line._brand_id" style="font-weight: bold; font-style: italic; background-color:lightgray"/> 
+            </td>
+        </xpath> 
+        
+      
+    
+    </template>
+
+
+
+</odoo>
